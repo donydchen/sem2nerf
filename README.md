@@ -6,7 +6,7 @@
 <img src="docs/output.gif" width="1024" style="margin-top: -6px">
 
 
-[[arXiv Manuscript](https://arxiv.org/#)] 
+[[arXiv Preprint](https://arxiv.org/abs/2203.10821)] 
 [[Project Page](https://donydchen.github.io/sem2nerf/)] 
 [[Demo Video](https://www.youtube.com/watch?v=cYr3Dz8N_9E)]
 
@@ -22,7 +22,7 @@ datasets.
 @article{chen2022sem2nerf,
     title={Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields},
     author={Chen, Yuedong and Wu, Qianyi and Zheng, Chuanxia and Cham, Tat-Jen and Cai, Jianfei},
-    journal={arXiv},
+    journal={arXiv preprint arXiv:2203.10821},
     year={2022}
 }
 ```
