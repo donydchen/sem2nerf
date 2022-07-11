@@ -1,0 +1,5 @@
+0:
+  batch_size: 1
+  num_steps: 28
+  img_size: 512
+  resolution_vol: 128

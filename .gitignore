@@ -1,0 +1,14 @@
+.vscode
+.cache
+*.pyc
+*.pt
+*.so
+*.o
+*.swp
+*.prof
+.nfs*
+_cache_*
+smux-*
+
+/out
+/pretrained_models/*.pt*
