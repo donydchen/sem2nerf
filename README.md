@@ -65,14 +65,14 @@ If the environment is setup correctly, this command should function properly and
 
 ```bash
 data/CelebAMask-HQ/
-    CelebA-HQ-img/
-    CelebAMask-HQ-mask-anno/
-    CelebAMask-HQ-pose-anno.txt
-    mask_samples/
-    test_paths.txt
-    train_paths.txt
-    val_paths.txt
-    vis_paths.txt
+        |--- CelebA-HQ-img/
+        |--- CelebAMask-HQ-mask-anno/
+        |--- CelebAMask-HQ-pose-anno.txt
+        |--- mask_samples/
+        |--- test_paths.txt
+        |--- train_paths.txt
+        |--- val_paths.txt
+        |--- vis_paths.txt
 ```
 
 * Preprocess the semantic mask data
