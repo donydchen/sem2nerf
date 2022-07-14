@@ -93,8 +93,8 @@ class Sem2NeRF(nn.Module):
             print('Loading decoder weights from pretrained!')
             if self.opts.pigan_curriculum_type == "CelebAMask_HQ":
                 pigan_model_paths = model_paths['pigan_celeba']
-            elif self.opts.pigan_curriculum_type == "PseudoCats":
-                pigan_model_paths = model_paths['pigan_pseudocats']
+            elif self.opts.pigan_curriculum_type == "CatMask":
+                pigan_model_paths = model_paths['pigan_cat']
             else:
                 raise Exception("Cannot find environment %s" % self.opts.pigan_curriculum_type)
             ckpt = torch.load(pigan_model_paths, map_location='cpu')

@@ -118,7 +118,7 @@ CelebAMask_HQ = {
 }
 
 
-PseudoCats = {
+CatMask = {
     'fov': 18,
     'ray_start': 0.8,
     'ray_end': 1.2,

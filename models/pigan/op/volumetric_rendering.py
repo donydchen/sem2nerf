@@ -71,13 +71,6 @@ def get_initial_rays_trig(n, num_steps, device, fov, resolution, ray_start, ray_
     rays_d_cam = normalize_vecs(torch.stack([x, y, z], -1))
     rays_d_cam = torch.stack(n*[rays_d_cam])
 
-    # z_vals = torch.linspace(ray_start, ray_end, num_steps, device=device).reshape(1, num_steps, 1).repeat(W*H, 1, 1)
-    # points = rays_d_cam.unsqueeze(1).repeat(1, num_steps, 1) * z_vals
-
-    # points = torch.stack(n*[points])
-    # z_vals = torch.stack(n*[z_vals])
-    # rays_d_cam = torch.stack(n*[rays_d_cam]).to(device)
-
     if opts is not None and opts.patch_train:
         n_points = opts.resolution_vol * opts.resolution_vol
         sample_pattern = get_sampling_pattern(n, device, opts.resolution_vol, opts.ray_scale_anneal, 

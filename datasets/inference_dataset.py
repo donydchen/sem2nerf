@@ -25,7 +25,7 @@ class InferenceDataset3D(Dataset):
         self.env_name = opts.pigan_curriculum_type
         if self.env_name == "CelebAMask_HQ":
             pose_file_name = "CelebAMask-HQ-pose-anno.txt"
-        elif self.env_name == "PseudoCats":
+        elif self.env_name == "CatMask":
             pose_file_name = "pose-pseudo.txt"
         else:
             raise Exception("Cannot find environment %s" % self.env_name)
@@ -73,7 +73,7 @@ class InferenceDataset3D(Dataset):
         if self.env_name == "CelebAMask_HQ":
             n_headlines = 2
             n_pose_params = 3
-        elif self.env_name == "PseudoCats":
+        elif self.env_name == "CatMask":
             n_headlines = 1
             n_pose_params = 2
         else:
@@ -97,7 +97,7 @@ class InferenceDataset3D(Dataset):
         if self.env_name == "CelebAMask_HQ":
             yaw = np.deg2rad(90 - cur_pose[0])
             pitch = np.deg2rad(90 + cur_pose[1])
-        elif self.env_name == "PseudoCats":
+        elif self.env_name == "CatMask":
             yaw = cur_pose[0]
             pitch = cur_pose[1]
         else:
@@ -110,7 +110,7 @@ class InferenceDataset3D(Dataset):
 
         if self.env_name == "CelebAMask_HQ":
             new_labels = [0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-        elif self.env_name == "PseudoCats":
+        elif self.env_name == "CatMask":
             new_labels = [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 0, 7, 0]
         else:
             raise Exception("Cannot find environment %s" % self.env_name)

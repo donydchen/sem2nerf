@@ -12,3 +12,10 @@ smux-*
 
 /out
 /pretrained_models/*.pt*
+/data/CatMask/images
+/data/CatMask/masks
+/data/CatMask/pose-pseudo.txt
+/data/CelebAMask-HQ/CelebA-HQ-img
+/data/CelebAMask-HQ/CelebAMask-HQ-mask-anno
+/data/CelebAMask-HQ/masks
+/data/CelebAMask-HQ/CelebAMask-HQ-pose-anno.txt

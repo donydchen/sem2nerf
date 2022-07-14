@@ -104,7 +104,6 @@ def run():
             tic = time.time()
             # reset fov to original
             net.pigan_curriculum['fov'] = 12 if opts.pigan_curriculum_type == 'CelebAMask_HQ' else 18
-            print('Reset fov to', net.pigan_curriculum['fov'])
             result_batch = run_on_batch_images(input_batch, net, opts, latent_mask, 
                                                latent_to_inject=batch_latent_to_inject)
             toc = time.time()
@@ -139,6 +138,7 @@ def run():
 
     result_str = 'Runtime {:.4f}+-{:.4f}'.format(np.mean(global_time), np.std(global_time))
     print(result_str)
+    print('All Done! Saved data to %s.' % opts.exp_dir)
 
 
 def tensor_to_PIL(img):

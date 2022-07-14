@@ -512,7 +512,7 @@ class Coach3D:
         if self.opts.pigan_curriculum_type == 'CelebAMask_HQ':
             h_range = (0.4, 0.55)
             v_range = (0.3, 0.45)
-        elif self.opts.pigan_curriculum_type == 'PseudoCats':
+        elif self.opts.pigan_curriculum_type == 'CatMask':
             h_range = (0.3, 0.5)
             v_range = (0.25, 0.4)
         else:

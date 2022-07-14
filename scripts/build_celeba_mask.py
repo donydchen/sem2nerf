@@ -72,5 +72,5 @@ def main(in_dir, out_dir):
 
 if __name__ == "__main__":
     in_dir = 'data/CelebAMask-HQ/CelebAMask-HQ-mask-anno'
-    out_dir = 'data/CelebAMask-HQ/mask'
+    out_dir = 'data/CelebAMask-HQ/masks'
     main(in_dir, out_dir)

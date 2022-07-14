@@ -50,7 +50,7 @@ def get_colors(env_name, label_nc):
                       [255, 51, 153], [0, 204, 204], [0, 51, 0], [255, 153, 51], [0, 204, 0]]
         else:
             raise Exception('Unknown label number: %d' % label_nc)
-    elif env_name == "PseudoCats":
+    elif env_name == "CatMask":
         if label_nc == 16:
             colors = [[255, 255, 255], [220, 220, 0], [190, 153, 153], [250, 170, 30], [220, 220, 0], [107, 142, 35],
                     [102, 102, 156], [152, 251, 152], [119, 11, 32], [244, 35, 232], [220, 20, 60], [52, 83, 84],
