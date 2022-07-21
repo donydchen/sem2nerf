@@ -1,14 +1,12 @@
 # Sem2NeRF
 
-Official pytorch implementation of [ECCV 2022] *Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields* by [Yuedong Chen](https://donydchen.github.io/), [Qianyi Wu](https://qianyiwu.github.io/), [Chuanxia Zheng](https://www.chuanxiaz.com/), [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and [Jianfei Cai](https://jianfei-cai.github.io/).
+Official PyTorch implementation of [ECCV 2022] *Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields* by [Yuedong Chen](https://donydchen.github.io/), [Qianyi Wu](https://qianyiwu.github.io/), [Chuanxia Zheng](https://www.chuanxiaz.com/), [Tat-Jen Cham](https://personal.ntu.edu.sg/astjcham/) and [Jianfei Cai](https://jianfei-cai.github.io/).
 
 <a href="https://arxiv.org/abs/2203.10821"><img src="https://img.shields.io/badge/arXiv-2203.10821-b31b1b.svg" height=22.5></a> 
 <a href="https://www.youtube.com/watch?v=cYr3Dz8N_9E"><img src="https://img.shields.io/badge/YouTube-Demo Video-blue.svg" height=22.5></a>
 <a href="https://donydchen.github.io/sem2nerf/"><img src="https://img.shields.io/badge/Web-Project Page-brightgreen.svg" height=22.5></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" height=22.5></a> 
 
-<!-- <img src="docs/input.png" width="1024">
-<img src="docs/output.gif" width="1024" style="margin-top: -6px"> -->
 
 <img src="docs/sem2nerf.gif">
 
@@ -207,7 +205,7 @@ You are more than welcome to contribute to this project by sending a [pull reque
 
 If you are interested in **NeRF / neural implicit representions + semantic map**, we would also like to recommend you to check out other related works:
 
-* Object-compositional implicit neural surfaces: [ECCV 2022] [ObjSDF](https://qianyiwu.github.io/objectsdf).
+* Object-compositional implicit neural surfaces: [ECCV 2022] [ObjectSDF](https://qianyiwu.github.io/objectsdf).
 
 * Digital human animation: [ECCV 2022 oral] [SSPNeRF](https://alvinliu0.github.io/projects/SSP-NeRF).
 
