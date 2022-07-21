@@ -10,7 +10,7 @@ Official pytorch implementation of [ECCV 2022] *Sem2NeRF: Converting Single-View
 <!-- <img src="docs/input.png" width="1024">
 <img src="docs/output.gif" width="1024" style="margin-top: -6px"> -->
 
-<img src="https://i.imgur.com/mHsyaD6.gif">
+<img src="docs/sem2nerf.gif">
 
 
 ## Abstract
