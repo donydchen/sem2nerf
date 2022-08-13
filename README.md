@@ -17,12 +17,21 @@ datasets.
 
 
 
-## Recent Updates
+<!-- ## Recent Updates
 
 * `14-Jul-2022`: released CatMask dataset with related training scripts.
 * `11-Jul-2022`: released Sem2NeRF codes and models for CelebAMask-HQ and CatMask datasets.
-* `22-Mar-2022`: initialize the Sem2NeRF repository with demo and arxiv manuscript.
+* `22-Mar-2022`: initialize the Sem2NeRF repository with demo and arxiv manuscript. -->
 
+<details>
+  <summary>Recent Updates</summary>
+        
+* `14-Jul-2022`: released CatMask dataset with related training scripts.
+        
+* `11-Jul-2022`: released Sem2NeRF codes and models for CelebAMask-HQ and CatMask datasets.
+        
+* `22-Mar-2022`: initialize the Sem2NeRF repository with demo and arxiv manuscript.
+</details>
 
 ## Getting Started
 
