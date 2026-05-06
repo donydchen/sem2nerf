@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Sem2NeRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="https://donydchen.github.io/sem2nerf/img/sem2nerf_square.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="922">
+    <meta property="og:image:height" content="830">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://donydchen.github.io/sem2nerf/"/>
+    <meta property="og:title" content="Sem2NeRF" />
+    <meta property="og:description" content="Project page for Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sem2NeRF" />
+    <meta name="twitter:description" content="Project page for Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields." />
+    <meta name="twitter:image" content="https://donydchen.github.io/sem2nerf/img/sem2nerf_square.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Sem2NeRF</b>: Converting Single-View </br> Semantic Masks to Neural Radiance Fields</br> 
+                <small>
+                    ECCV 2022
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://donydchen.github.io/">
+                          Yuedong Chen
+                        </a>
+                        </br>Monash University
+                    </li>
+                    <li>
+                        <a href="https://wuqianyi.top">
+                            Qianyi Wu
+                        </a>
+                        </br>Monash University
+                    </li>
+                    <li>
+                        <a href="https://www.chuanxiaz.com">
+                            Chuanxia Zheng
+                        </a>
+                        </br>Monash University
+                    </li><br>
+                    <li>
+                        <a href="https://personal.ntu.edu.sg/astjcham/">
+                            Tat-Jen Cham
+                        </a>
+                        </br>Nanyang Technological University
+                    </li>
+                    <li>
+                        <a href="https://jianfei-cai.github.io">
+                            Jianfei Cai
+                        </a>
+                        </br>Monash University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2203.10821">
+                            <image src="img/paper.png" height="60px">
+                                <h4><strong>arXiv Preprint</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/cYr3Dz8N_9E">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Demo Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/donydchen/sem2nerf">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="img/sem2nerf.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+Image translation and manipulation have gain increasing attention along with the rapid development of deep generative
+models. Although existing approaches have brought impressive results, they mainly operated in 2D space. In light of recent advances in NeRF-based 3D-aware generative models,
+we introduce a new task, <b>Semantic-to-NeRF translation</b>, that aims to reconstruct a 3D scene modelled by NeRF, conditioned
+on one single-view semantic mask as input. To kick-off this novel task, we propose the  <b>Sem2NeRF</b> framework. In particular, Sem2NeRF addresses the highly challenging task by encoding the semantic mask into the latent code that
+controls the 3D scene representation of a pretrained decoder. To further improve the accuracy of the mapping, we
+integrate a new region-aware learning strategy into the design of both the encoder and the decoder. We verify the
+efficacy of the proposed Sem2NeRF and demonstrate that it outperforms several strong baselines on two benchmark
+datasets.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/cYr3Dz8N_9E" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Model Architecture
+                </h3>
+                <p style="text-align:center;">
+                    <image src="img/model_archi.png" height="50px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                Architecture of the Sem2NeRF framework. It aims to convert a single-view semantic mask to a 3D scene represented by
+                NeRF. Specifically, a given semantic mask will be partitioned into patches, which will be further encoded by a
+                patch-based encoder into a latent style code of a pretrained NeRF-based 3D
+                generator. A region R will be randomly sampled to enforce awareness of differences among
+                regions. And an optional latent vector z is included to enable multi-modal synthesis
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results: Free-viewpoint image generation
+                </h3>
+                <p style="text-align:center;">
+                    <image src="img/free_celeba.png" height="50px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Free-viewpoint image generation on CelebAMask-HQ. "Output" refers to the generated image that has the same viewing
+                    direction as the "Input", and "Overlay" shows the results of overlaying "Output" with "Input", so as to better
+                    demonstrate the mapping accuracy
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/free_cat.png" height="30px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Free-viewpoint image generation on CatMask. "Output" refers to the generated image that has the same viewing
+                    direction as the "Input", and "Overlay" shows the results of overlaying "Output" with "Input", so as to better
+                    demonstrate the mapping accuracy
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results: Semantic Masks Editing
+                </h3>
+                <p style="text-align:center;">
+                    <image src="img/edit_celeba.png" height="50px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Semantic mask editing on CelebAMask-HQ. The ﬁrst row shows the results of the original semantic masks, while the
+                    following rows give the results of editing the mentioned area, highlighted with yellow-dash box. Three viewpoints are
+                    given for each group, with the ﬁrst one having the same viewing direction as the input
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/edit_cat.png" height="30px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Semantic mask editing on CatMask. Edited regions are highlighted with yellow-dash box. The ﬁrst viewpoint has the same
+                    pose as the input
+                </p>
+            </div>
+        </div>
+            
+
+        
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results: Multi-Modal Synthesis
+                </h3>
+                <p style="text-align:center;">
+                    <image src="img/style_celeba.png" height="50px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Multi-modal synthesis on CelebAMask-HQ. Styles are linearly blended from left to right. The last viewpoint in each group
+                    has the same pose as the input
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/style_cat.png" height="30px" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    Multi-modal synthesis on CatMask.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{chen2022sem2nerf,
+    title={Sem2NeRF: Converting Single-View Semantic Masks to Neural Radiance Fields},
+    author={Chen, Yuedong and Wu, Qianyi and Zheng, Chuanxia and Cham, Tat-Jen and Cai, Jianfei},
+    journal={arXiv preprint arXiv:2203.10821},
+    year={2022}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
