@@ -99,8 +99,7 @@ class Sem2NeRF(nn.Module):
                 raise Exception("Cannot find environment %s" % self.opts.pigan_curriculum_type)
             ckpt = torch.load(pigan_model_paths, map_location='cpu')
             self.decoder.load_state_dict(ckpt, strict=False)
-            if self.opts.start_from_latent_avg:
-                self.__load_latent_avg(ckpt, repeat=1)
+            self.__load_latent_avg(ckpt)
 
     def forward(self, x, pose, return_latents=False, iter_num=0):
         # update pigan curriculum
