@@ -109,7 +109,8 @@ def run():
             toc = time.time()
             global_time.append(toc - tic)
 
-        for i in range(opts.test_batch_size):
+        batch_count = min(result_batch.shape[0], max(opts.n_images - global_i, 0))
+        for i in range(batch_count):
             images = result_batch[i]
             im_id = input_batch[-1][i]
             save_image(images, os.path.join(out_path_results, f'{im_id}{name_postfix}.png'), normalize=True)

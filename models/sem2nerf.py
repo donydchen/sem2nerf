@@ -176,7 +176,10 @@ class Sem2NeRF(nn.Module):
         # inject latent space to general multi-modal outputs
         if latent_mask is not None:
             freq, shift = codes
-            inject_freq, inject_shift = inject_latent
+            if inject_latent is not None:
+                inject_freq, inject_shift = inject_latent
+                inject_freq = inject_freq[:freq.shape[0]]
+                inject_shift = inject_shift[:shift.shape[0]]
             for i in latent_mask:
                 start_i = i * self.subnet_attri_getter('decoder').siren.hidden_dim
                 end_i = (i + 1) * self.subnet_attri_getter('decoder').siren.hidden_dim
